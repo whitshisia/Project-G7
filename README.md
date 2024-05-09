@@ -28,8 +28,8 @@ The base URL for your backend is: `http://localhost:3000`
  7. Update an order 
 
  ## Live link
-Deployed Frontend can be accessed here ()
-Deployed Backend can be accessed here [APP]()
+Deployed Frontend can be accessed here [APP](https://beamish-taiyaki-8941d6.netlify.app/)
+Deployed Backend can be accessed here [BACKEND](https://project-g7.onrender.com/)
 
 
 ## Known Bugs
