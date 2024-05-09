@@ -9,21 +9,13 @@ adding, uodating or deleting food items
 After unbundling the project:
 
 1. Run `npm install` in your terminal.
-2. Run `npm run server`. This will run your backend on port `8001`.
-3. In a new terminal, run `npm start`. This will run your React app on port `8000`.
-
-Make sure to open
-[http://localhost:8001/transactions](http://localhost:8001/transactions) in the
-browser to verify that your backend is working before you proceed!
-
-The app uses [Semantic UI](https://semantic-ui.com/) for styling. If you see any
-unfamiliar classNames on some components, don't sweat! That's coming from
-Semantic UI and you shouldn't need to touch it.
+2. Run `npm run dev ` in your teminal to start App.
+3. Run `npx json-server --watch db.json ` to stat your server
 
 
 ## Endpoints
 
-The base URL for your backend is: `http://localhost:8001`
+The base URL for your backend is: `http://localhost:3000`
 
 ## Features
  1. Viewing menu.
