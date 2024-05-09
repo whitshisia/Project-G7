@@ -1,4 +1,5 @@
 # Food Delivery React App
+## By Sandie Mwangi , Shisia Whitney , Scarlet Sarah , Samuel Kimani.
 ## Description
 Welcome to Quartet-S delivery app. This is a simple app that enables users to browse through the menu, 
 add food items to their cart and place an order. The admin has the ability to manage the menu by
