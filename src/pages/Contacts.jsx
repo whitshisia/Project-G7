@@ -3,7 +3,7 @@ import ContactForm from './ContactForm'
 
 function Contacts() {
   return (
-    <div className="bg-green-900">
+    <div className="bg-green-500">
       <ContactForm />
       <div className="container">
       <div style={{ textAlign: 'center' }}>

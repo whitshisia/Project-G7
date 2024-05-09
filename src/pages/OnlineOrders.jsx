@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from 'react-pagination-library';
 import 'react-pagination-library/build/css/index.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Display from '../components/Display';
 
 const Foods = () => {
   const [foods, setFoods] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
-  const [comments, setComments] = useState({}); 
+  const [comments, setComments] = useState({});
+  const [selectedFood, setSelectedFood] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:3000/foods')
@@ -45,7 +49,14 @@ const Foods = () => {
       body: JSON.stringify(newOrder),
     })
       .then(response => response.json())
-      .then(data => console.log('Order added:', data));
+      .then(data => {
+        console.log('Order added:', data);
+        toast.success('Order is made successfully');
+      })
+      .catch(error => {
+        console.error('Error making order:', error);
+        toast.error('Failed to make order');
+      });
   };
 
   const handleCommentSubmit = (foodId, comment) => {
@@ -65,6 +76,14 @@ const Foods = () => {
       ...prevComments,
       [foodId]: prevComments[foodId].filter(comment => comment.id !== commentId),
     }));
+  };
+
+  const handleImageClick = (food) => {
+    setSelectedFood(food);
+  };
+
+  const handleCloseDisplay = () => {
+    setSelectedFood(null);
   };
 
   const itemsPerPage = 4;
@@ -88,11 +107,16 @@ const Foods = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {filteredFoods.slice(startIndex, endIndex).map(food => (
           <div key={food.id} className="border border-gray-300 rounded p-4">
-            <img src={food.image} alt={food.name} className="w-full mb-2" />
+            <img
+              src={food.image}
+              alt={food.name}
+              className="w-full mb-2 cursor-pointer"
+              onClick={() => handleImageClick(food)}
+            />
             <h2 className="text-xl font-bold">{food.name}</h2>
             <p>{food.description}</p>
             <p>${food.price}</p>
-            <p>ingredients:{food.ingredients}</p>
+            <p>Ingredients: {food.ingredients}</p>
             <div>
               {comments[food.id].map(comment => (
                 <div key={comment.id}>
@@ -115,6 +139,9 @@ const Foods = () => {
         theme="bottom-border"
         className="mt-4"
       />
+      {selectedFood && (
+        <Display food={selectedFood} onClose={handleCloseDisplay} />
+      )}
     </div>
   );
 };

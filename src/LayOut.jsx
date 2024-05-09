@@ -63,10 +63,10 @@ const Layout = () => {
   return (
     <>
       <NavBar />
-      <div className='bg-gray-100 text-lg container mx-auto min-h-[80vh]'>
+      <div className=' text-lg container mx-auto min-h-[80vh]'>
         <Outlet />
       </div>
-      <footer className='bg-green-900'>
+      <footer className='bg-green-500'>
         <div className="mx-auto w-full max-w-screen-xl p-3 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-4 md:mb-0">

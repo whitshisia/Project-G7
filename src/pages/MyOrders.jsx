@@ -12,17 +12,19 @@ function MyOrders() {
       .then(response => response.json())
       .then(data => setMyOrders(data));
   }, []);
-
   const handleDeleteOrder = (orderId) => {
     fetch(`http://localhost:3000/myOrders/${orderId}`, {
       method: 'DELETE'
     })
     .then(() => {
       setMyOrders(prevOrders => prevOrders.filter(order => order.orderId !== orderId));
+      toast.success('Order deleted successfully');
     })
-    .catch(error => console.error('Error deleting order:', error));
+    .catch(error => {
+      console.error('Error deleting order:', error);
+      toast.error('Failed to delete order');
+    });
   };
-
   const handleEditOrder = (order) => {
     setEditMode(order.orderId);
     setEditedOrder(order);

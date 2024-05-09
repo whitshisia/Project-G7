@@ -20,7 +20,7 @@ function Home() {
   };
 
   return (
-    <section className="bg-center bg-no-repeat bg-[url('https://img.freepik.com/free-vector/delivery-staff-ride-motorcycles-shopping-concept_1150-34879.jpg?size=626&ext=jpg&ga=GA1.1.34264412.1715126400&semt=sph')]  bg-blend-multiply">
+    <section className=" h-auto max-w-full   bg-[url('https://img.freepik.com/free-vector/delivery-staff-ride-motorcycles-shopping-concept_1150-34879.jpg?size=626&ext=jpg&ga=GA1.1.34264412.1715126400&semt=sph')]  bg-blend-multiply">
 
 <div className="min-h-screen bg-center flex items-center justify-center">
       {!isLoggedIn ? (
