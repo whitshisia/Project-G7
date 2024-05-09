@@ -6,7 +6,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch('http://localhost:3000/menu');
+        const response = await fetch('https://project-g7.onrender.com/menu');
         if (!response.ok) {
           throw new Error('Failed to fetch menu items');
         }

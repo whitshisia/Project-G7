@@ -8,12 +8,12 @@ function MyOrders() {
   const [editedOrder, setEditedOrder] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:3000/myOrders') 
+    fetch('https://project-g7.onrender.com/myOrders') 
       .then(response => response.json())
       .then(data => setMyOrders(data));
   }, []);
   const handleDeleteOrder = (orderId) => {
-    fetch(`http://localhost:3000/myOrders/${orderId}`, {
+    fetch(`https://project-g7.onrender.com/${orderId}`, {
       method: 'DELETE'
     })
     .then(() => {
@@ -37,7 +37,7 @@ function MyOrders() {
       return;
     }
   
-    fetch(`http://localhost:3000/myOrders/${orderId}`, {
+    fetch(`https://project-g7.onrender.com/${orderId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

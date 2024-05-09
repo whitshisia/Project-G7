@@ -13,7 +13,7 @@ const Foods = () => {
   const [selectedFood, setSelectedFood] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/foods')
+    fetch('https://project-g7.onrender.com/foods')
       .then(response => response.json())
       .then(data => {
         setFoods(data);
@@ -41,7 +41,7 @@ const Foods = () => {
       status: 'Pending',
       date: new Date().toLocaleDateString()
     };
-    fetch('http://localhost:3000/myOrders', {
+    fetch('https://project-g7.onrender.com/myOrders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
